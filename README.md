@@ -52,9 +52,20 @@ The above figure displays the Landslide Susceptibility Mapping in a particular R
 - The first step in using this code is to provide the links to the raster files of the data at respective locations in the first section.
 - The second step is to use the image segmentation application and draw the region of interest. Then save that as *segmentImage* function.
 - Setup the training parameters and run the code.
-## Novelty of this Method
+- For the youtube video, click this link.
+## Novelty of this Method Implementation
+-This method enables the user to use **only MATLAB** to generate the landslide susceptibility maps from the raster files of the distribution of the parameters under consideration.
+- This method is user friendly and the user can use the same code for many different locations by just changing the links to files in the first page.
+- This method provide the user the flexibility to analyse on a particular part of the raster file, which we call as the Region of Interest. This ability of the code has been innovatively brought in by the clever use of the image segmenter application.
+- The user can upload the data in terms of many raster file formats such as .jpg, .png, .webp, .jpeg, etc.
+
+## Dataset Availability
+For running the code with this same data, click this download link.
 
 ## Credits and References
+- [Mathworks Innovation](https)
+- [MATLAB Documentation](https://in.mathworks.com/help/matlab/)
+- [Bhukosh](https://bhukosh.gsi.gov.in/Bhukosh/Public)
 
 ## License
 
