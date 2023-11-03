@@ -45,6 +45,7 @@ The weight of the trained model was saved later as a .mat file.
 
 ### Prediction and Susceptibility Mapping
 The indices corresponding to the region of interest as obtained earlier were used to obtain the data of all the input parameters for all the data points in our Region of Interest. Then the model was was used to predict the landslide susceptibility at those points. Then the obtained values at these points were plotted to obtain the landslide susceptibility of all the region under consideration. This was the result.
+![Result](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/landslide%20mapping.jpg?raw=true)
 
 ## How to use this Code
 
