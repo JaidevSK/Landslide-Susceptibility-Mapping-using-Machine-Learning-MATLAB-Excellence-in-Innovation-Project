@@ -13,6 +13,7 @@ The data of the distribution of various geographical parameters such as slope, a
 
 ![Dataset](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/Dataset.webp?raw=true)
 
+
 ![Dataset Historical](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/dataset1_historical.webp?raw=true)
 
 ### Data Preprocessing
