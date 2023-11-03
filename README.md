@@ -20,7 +20,7 @@ The data of the distribution of various geographical parameters such as slope, a
 
 - The next step was to identify the region of interest in the map. **This was done by a very innovative technique.** I used the image processing toolbox for this purpose. The image segmenter application was used for segmenting the Region of Interest using the Draw ROI option. Once this was done, the function was exported as *segmentimage1.m*.
 
-- Once we had this function, the *masked images* corresponding to our Region of Interest **ROI** were obtained for all the images. This was a very clever way of restricting our analysis only to our own region of interest in the map and we can successfully ignore the regions that we are not considering.
+- Once we had this function, the *masked images* corresponding to our Region of Interest **ROI** were obtained for all the images. This was a very clever way of restricting our analysis only to our own region of interest in the map and we can successfully ignore the regions that we are not considering. Then the data points from the map of history of landslides were clustered into 5 classes and the clusters were labelled and the points with a particular label were assigned the colour of the cluster centroid. This was done so that we can effectively use the same colour encoding scheme for mapping the risk factor, as it was done with the map of historical landslides. 
 
 - The next task was to obtain the data points. For this, first of all, the indices of the raster file belonging to our Region of Interest were obtained by finding the non-zero indices in the BW mask obtained from the segmentation function. Then, a number of indices were chosen from these obtained indices randomly as the training data points.
 
@@ -28,7 +28,7 @@ The data of the distribution of various geographical parameters such as slope, a
 
 ### Model Architecture and Training
 
-- A cascade forward neural network was used for this project. The model has 36 input parameters (each corresponding to the R, G, and B values of the obtained data points of the 12 input parameters). The model had 24 hidden units and the output had 1 parameters, corresponding to the label of the pixel under consideration. The colour encoding scheme of the landslide susceptibility is the same as that of the map of the historical landslides.
+- A cascade forward neural network was used for this project. The model has 36 input parameters (each corresponding to the R, G, and B values of the obtained data points of the 12 input parameters). The model had 24 hidden units and the output had 1 parameter corresponding to the label of the pixel under consideration. The colour encoding scheme of the landslide susceptibility is the same as that of the map of the historical landslides.
 
 ![Model](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/Model%20Architecture.png?raw=true)
 
@@ -49,7 +49,9 @@ The indices corresponding to the region of interest as obtained earlier were use
 The above figure displays the Landslide Susceptibility Mapping in a particular Region of Interest as per our choice.
 
 ## How to use this Code
-
+- The first step in using this code is to provide the links to the raster files of the data at respective locations in the first section.
+- The second step is to use the image segmentation application and draw the region of interest. Then save that as *segmentImage* function.
+- Setup the training parameters and run the code.
 ## Novelty of this Method
 
 ## Credits and References
