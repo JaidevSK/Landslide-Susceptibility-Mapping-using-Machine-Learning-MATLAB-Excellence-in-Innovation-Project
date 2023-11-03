@@ -11,9 +11,9 @@ The data of the distribution of various geographical parameters such as slope, a
 ### Data Collection
 - The first step in the project was of obtaining the data. The data of the distribution of geographical parameters was downloaded as maps from [Bhukosh](https://bhukosh.gsi.gov.in/Bhukosh/Public) in the raster format. The parameters uder consideration include slope, aspect, plan curvature, spi, twi, elevation, distance from fault, distance from rivers, distance from roads, rainfall, ndvi, soil type apart from the data of the history of landslides occurring in that area. These files were obtained in the .jpg format (raster file format). 
 
-![Dataset](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/Dataset1.webp?raw=true)
+![Dataset](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/Dataset.webp?raw=true)
 
-![Dataset Historical](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/dataset1result.webp?raw=true)
+![Dataset Historical](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/dataset1_historical.webp?raw=true)
 
 ### Data Preprocessing
 
