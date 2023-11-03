@@ -28,7 +28,7 @@ The data of the distribution of various geographical parameters such as slope, a
 
 ### Model Architecture and Training
 
-- A cascade forward neural network was used for this project. The model has 36 input parameters (each corresponding to the R, G, and B values of the obtained data points of the 12 input parameters). The model had 78 hidden units and the output had 3 parameters, each corresponding to the R, G and B values of the pixel under consideration. The colour encoding scheme of the landslide susceptibility is the same as that of the map of the historical landslides.
+- A cascade forward neural network was used for this project. The model has 36 input parameters (each corresponding to the R, G, and B values of the obtained data points of the 12 input parameters). The model had 24 hidden units and the output had 1 parameters, corresponding to the label of the pixel under consideration. The colour encoding scheme of the landslide susceptibility is the same as that of the map of the historical landslides.
 
 ![Model](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/Model%20Architecture.png?raw=true)
 
@@ -46,6 +46,7 @@ The weight of the trained model was saved later as a .mat file.
 ### Prediction and Susceptibility Mapping
 The indices corresponding to the region of interest as obtained earlier were used to obtain the data of all the input parameters for all the data points in our Region of Interest. Then the model was was used to predict the landslide susceptibility at those points. Then the obtained values at these points were plotted to obtain the landslide susceptibility of all the region under consideration. This was the result.
 ![Result](https://github.com/JaidevSK/Landslide-Susceptibility-Mapping-using-Machine-Learning-MATLAB-Excellence-in-Innovation-Project/blob/main/landslide%20mapping.jpg?raw=true)
+The above figure displays the Landslide Susceptibility Mapping in a particular Region of Interest as per our choice.
 
 ## How to use this Code
 
