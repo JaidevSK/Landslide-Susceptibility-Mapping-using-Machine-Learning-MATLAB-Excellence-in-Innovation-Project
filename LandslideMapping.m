@@ -2,7 +2,7 @@ clc;
 close all;
 clear all;
 
-%% Put the links to the files
+% Put the links to the files
 slope_file = "Dataset\slope.jpg";
 aspect_file = "Dataset\aspect.jpg";
 pCurvature_file = "Dataset\pCurvature.jpg";
@@ -16,10 +16,7 @@ rain_file = "Dataset\rain.jpg";
 ndvi_file = "Dataset\ndvi.jpg";
 soil_file = "Dataset\soil.jpg";
 history_file = "Dataset\dataset1result.jpg";
-N1 = 2500;
-
-
-
+N1 = 2500; %The number of training samples
 
 %% Loading the data for the landslide susceptibility parameters in .jpg format and then cropping the region of interest
 slope=imread(slope_file);
@@ -120,42 +117,6 @@ imwrite(maskedImage_result,"Dataset in Region of Interest/landslidehistory.jpg")
 
 % Find the indices of the datapoints that belong to the region of interest
 ROIindices = find(BW_result == 1);
-he = maskedImage_result;
-lab_he = (maskedImage_result);
-% ab = lab_he(:,:,2:3);
-% ab = im2single(ab);
-[pixel_labels, centers] = imsegkmeans(lab_he, 5, NumAttempts=3);
-B2 = labeloverlay(maskedImage_result,pixel_labels);
-figure
-imshow(B2)
-title("Clustered Labeled Image")
-mask1 = pixel_labels == 1;
-cluster1 = he.*uint8(mask1);
-figure
-imshow(cluster1)
-title("Objects in Cluster 1");
-mask2 = pixel_labels == 2;
-cluster2 = he.*uint8(mask2);
-figure
-imshow(cluster2)
-title("Objects in Cluster 2");
-mask3 = pixel_labels == 3;
-cluster3 = he.*uint8(mask3);
-figure
-imshow(cluster3)
-title("Objects in Cluster 4");
-mask4 = pixel_labels == 4;
-cluster4 = he.*uint8(mask4);
-figure
-imshow(cluster4)
-title("Objects in Cluster 5");
-mask5 = pixel_labels == 5;
-cluster5 = he.*uint8(mask5);
-figure
-imshow(cluster5)
-title("Objects in Cluster 5");
-
-
 %% Select N1 random points from the roi
 randomIndices = ROIindices(randperm(length(ROIindices), N1));
 
@@ -174,7 +135,7 @@ soilArr = generateArray(maskedImage_soil, rowArray, colArray);
 ndviArr = generateArray(maskedImage_ndvi, rowArray, colArray);
 slopeArr = generateArray(maskedImage_slope, rowArray, colArray);
 roaddArr = generateArray(maskedImage_roadd, rowArray, colArray);
-ls_historyArr = generateArray1(pixel_labels, rowArray, colArray);
+ls_historyArr = generateArray(maskedImage_result, rowArray, colArray);
 aspectArr = generateArray(maskedImage_aspect, rowArray, colArray);
 elevationArr = generateArray(maskedImage_elevation, rowArray, colArray);
 spiArr = generateArray(maskedImage_spi, rowArray, colArray);
@@ -278,11 +239,9 @@ maximg = max(max(outputs_for_image));
 
 for i=1:a
     % alu = reshape(centers(roundof(outputs_for_image(:, i)),:), [1,1,3]);
-    empty_image(rowArray(i), colArray(i),1) = centers(roundof(outputs_for_image(:, i)),1);
-    empty_image(rowArray(i), colArray(i),2) = centers(roundof(outputs_for_image(:, i)),2);
-    empty_image(rowArray(i), colArray(i),3) = centers(roundof(outputs_for_image(:, i)),3);
+    empty_image(rowArray(i), colArray(i),:) = outputs_for_image(:, i);
 end
 figure()
 imshow(empty_image/255)
 title("Landslide Mapping")
-imwrite(empty_image/255,"results/landslide mapping.jpg")
+imwrite(empty_image,"results/landslide mapping.jpg")
