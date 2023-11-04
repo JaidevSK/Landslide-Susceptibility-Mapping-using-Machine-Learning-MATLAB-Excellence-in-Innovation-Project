@@ -34,7 +34,7 @@ aspect=imread(aspect_file);
 figure()
 imshow(maskedImage_aspect)
 title("Aspect")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/aspect.jpg")
+imwrite(maskedImage_aspect,"Dataset in Region of Interest/aspect.jpg")
 
 
 pCurvature=imread(pCurvature_file);
@@ -42,7 +42,7 @@ pCurvature=imread(pCurvature_file);
 figure()
 imshow(maskedImage_pCurvature)
 title("Plan Curvature")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/plancurve.jpg")
+imwrite(maskedImage_pCurvature,"Dataset in Region of Interest/plancurve.jpg")
 
 
 
@@ -51,7 +51,7 @@ elevation=imread(elevation_file);
 figure()
 imshow(maskedImage_elevation)
 title("Elevation")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/elevation.jpg")
+imwrite(maskedImage_elevation,"Dataset in Region of Interest/elevation.jpg")
 
 
 spi=imread(spi_file);
@@ -59,7 +59,7 @@ spi=imread(spi_file);
 figure()
 imshow(maskedImage_spi)
 title("SPI")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/spi.jpg")
+imwrite(maskedImage_spi,"Dataset in Region of Interest/spi.jpg")
 
 
 twi=imread(twi_file);
@@ -67,56 +67,56 @@ twi=imread(twi_file);
 figure()
 imshow(maskedImage_twi)
 title("TWI")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/twi.jpg")
+imwrite(maskedImage_twi,"Dataset in Region of Interest/twi.jpg")
 
 faultd=imread(faultd_file);
 [BW_faultd,maskedImage_faultd] = segmentImage(faultd);
 figure()
 imshow(maskedImage_faultd)
 title("Distance from Fault")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/distfault.jpg")
+imwrite(maskedImage_faultd,"Dataset in Region of Interest/distfault.jpg")
 
 riverd=imread(riverd_file);
 [BW_riverd,maskedImage_riverd] = segmentImage(riverd);
 figure()
 imshow(maskedImage_riverd)
 title("Distance from River")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/distriver.jpg")
+imwrite(maskedImage_riverd,"Dataset in Region of Interest/distriver.jpg")
 
 roadd=imread(roadd_file);
 [BW_roadd,maskedImage_roadd] = segmentImage(roadd);
 figure()
 imshow(maskedImage_roadd)
 title("Distance from Road")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/distroad.jpg")
+imwrite(maskedImage_roadd,"Dataset in Region of Interest/distroad.jpg")
 
 rain=imread(rain_file);
 [BW_rain,maskedImage_rain] = segmentImage(rain);
 figure()
 imshow(maskedImage_rain)
 title("Rainfall")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/rainfall.jpg")
+imwrite(maskedImage_rain,"Dataset in Region of Interest/rainfall.jpg")
 
 ndvi=imread(ndvi_file);
 [BW_ndvi,maskedImage_ndvi] = segmentImage(ndvi);
 figure()
 imshow(maskedImage_ndvi)
 title("NDVI")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/ndvi.jpg")
+imwrite(maskedImage_ndvi,"Dataset in Region of Interest/ndvi.jpg")
 
 soil=imread(soil_file);
 [BW_soil,maskedImage_soil] = segmentImage(soil);
 figure()
 imshow(maskedImage_soil)
 title("Soil")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/soil.jpg")
+imwrite(maskedImage_soil,"Dataset in Region of Interest/soil.jpg")
 
 result=imread(history_file);
 [BW_result,maskedImage_result] = segmentImage(result);
 figure()
 imshow(maskedImage_result)
 title("History of Landslides")
-imwrite(maskedImage_slope,"Dataset in Region of Interest/landslidehistory.jpg")
+imwrite(maskedImage_result,"Dataset in Region of Interest/landslidehistory.jpg")
 
 % Find the indices of the datapoints that belong to the region of interest
 ROIindices = find(BW_result == 1);
@@ -128,7 +128,7 @@ lab_he = (maskedImage_result);
 B2 = labeloverlay(maskedImage_result,pixel_labels);
 figure
 imshow(B2)
-title("Labeled Image a*b*")
+title("Clustered Labeled Image")
 mask1 = pixel_labels == 1;
 cluster1 = he.*uint8(mask1);
 figure
@@ -285,4 +285,4 @@ end
 figure()
 imshow(empty_image/255)
 title("Landslide Mapping")
-imwrite(empty_image,"results/landslide mapping.jpg")
+imwrite(empty_image/255,"results/landslide mapping.jpg")
