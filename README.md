@@ -67,7 +67,7 @@ The above figure displays the Landslide Susceptibility Mapping in a particular R
 For running the code with this same data, click this download link.
 
 ## Credits and References
-- [Mathworks Innovation](https)
+- [Mathworks Excellence in Innovation](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Landslide%20Susceptibility%20Mapping%20using%20Machine%20Learning)
 - [MATLAB Documentation](https://in.mathworks.com/help/matlab/)
 - [Bhukosh](https://bhukosh.gsi.gov.in/Bhukosh/Public)
 
